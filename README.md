@@ -69,7 +69,15 @@ console.log(stringToArray(s));
 # Question - 6
 
 ```js
+function csvTo2DArray(csvStr) {
+  return csvStr.split("\n").map((row) => row.split(","));
+}
 
+const s = `1, 2
+3, 4
+5, 6
+7, 8`;
+console.log(csvTo2DArray(s));
 ```
 
 # Question - 7
@@ -109,7 +117,26 @@ console.log(ASCIItoString(arr));
 # Question - 10
 
 ```js
+function swap(arr, ind1, ind2) {
+  const temp = arr[ind1];
+  arr[ind1] = arr[ind2];
+  arr[ind2] = temp;
+}
 
+function bubbleSort(arr) {
+  const len = arr.length;
+  for (i = 0; i < len - 1; i++) {
+    for (j = 0; j < len - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        swap(arr, j, j + 1);
+      }
+    }
+  }
+  return arr;
+}
+
+const arr = prompt("Enter array: ").split(" ");
+console.log(bubbleSort(arr));
 ```
 
 # Question - 11
